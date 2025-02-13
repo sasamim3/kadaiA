@@ -47,15 +47,12 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
+            Players--;
             Destroy(other.gameObject);
-            if (Players > 0)
+            if (Players == 0)
             {
                 scoreJson.scoreSaved();
                 SceneManager.LoadScene("GameOver");
-            }
-            else
-            {
-                Players--;
             }
         }
     }

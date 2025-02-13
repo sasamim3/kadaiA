@@ -25,7 +25,7 @@ public class Access : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerController.Players > 0)
+        if(PlayerController.Players == 0)
         {
             var filter = Builders<BsonDocument>.Filter.Eq("Score", 0);
             var result = collection.Find("{Score:0}").FirstOrDefault();
